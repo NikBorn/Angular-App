@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { User } from '../../models/User';
 
@@ -10,12 +10,16 @@ import { User } from '../../models/User';
   // styles: [`h2{ color: blue}`] //if you want to do inline css
 })
 
-export class UserComponent {
+export class UserComponent implements OnInit {
   // properties
   user: User;
 
   // methods
   constructor() {
+
+  }
+
+  ngOnInit() {
     this.user = {
       firstName: 'Tyler',
       lastName: 'Durden',
