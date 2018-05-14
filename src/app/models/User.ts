@@ -1,10 +1,10 @@
 export interface User {
   firstName: string,
   lastName: string,
-  age: number,
-  address: {
-    street: string,
-    city: string,
-    state: string
+  age?: number,  // ? makes them optional
+  address?: {
+    street?: string,
+    city?: string,
+    state?: string
   };
 };
