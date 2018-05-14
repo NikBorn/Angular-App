@@ -25,11 +25,11 @@ export class UserComponent implements OnInit {
       lastName: 'Durden',
       age: 40,
       address: {
-        street: '2020 Lawrence St.'
+        street: '2020 Lawrence St.',
         city: 'Denver',
         state: 'CO'
       }
-    }
+    };
   }
 }
 
