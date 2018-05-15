@@ -9,7 +9,7 @@ import { User } from '../../models/User';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = false;
+  showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
   currentClasses: {};
@@ -32,7 +32,9 @@ export class UsersComponent implements OnInit {
             state: 'CO'
           },
           image: 'https://placeimg.com/600/600/people/1',
-          isActive: true
+          isActive: true,
+          balance: 100,
+          registered: new Date('01/02/2018 08:30:00')
         },
         {
           firstName: 'Brad',
@@ -44,7 +46,9 @@ export class UsersComponent implements OnInit {
             state: 'CO'
           },
           image: 'https://placeimg.com/600/600/people/2',
-          isActive: false
+          isActive: false,
+          balance: 200,
+          registered: new Date('02/14/2018 06:20:00')
         },
         {
           firstName: 'Edward',
@@ -56,7 +60,9 @@ export class UsersComponent implements OnInit {
             state: 'CO'
           },
           image: 'https://placeimg.com/600/600/people/3',
-          isActive: true
+          isActive: true,
+          balance: 150,
+          registered: new Date('11/02/2016 10:30:00')
         }
 
       ];
