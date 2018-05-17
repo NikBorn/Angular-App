@@ -1,14 +1,12 @@
 export interface User {
-  firstName: string,
-  lastName: string,
-  age?: number,  // ? makes them optional
+  firstName: string;
+  lastName: string;
+  age?: number;  // ? makes them optional
   address?: {
     street?: string,
     city?: string,
     state?: string
-  },
-  image?: string,
-  isActive?: boolean,
-  balance?: number,
+  };
+  isActive?: boolean;
   registered?: any;
-};
+}
