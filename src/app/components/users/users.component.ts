@@ -11,12 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      state: ''
-    }
+    email: ''
   }
   users: User[];
   showExtended: boolean = true;
@@ -32,12 +27,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Tyler',
           lastName: 'Durden',
-          age: 40,
-          address: {
-            street: '2020 Lawrence St.',
-            city: 'Denver',
-            state: 'CO'
-          },
+          email: 'tyler@gmail.com',
           isActive: true,
           registered: new Date('01/02/2018 08:30:00'),
           hide: true
@@ -45,12 +35,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Brad',
           lastName: 'Pitt',
-          age: 34,
-          address: {
-            street: '200 School St.',
-            city: 'Denver',
-            state: 'CO'
-          },
+          email: 'brad@gmail.com',
           isActive: false,
           registered: new Date('02/14/2018 06:20:00'),
           hide: true
@@ -58,12 +43,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Edward',
           lastName: 'Norton',
-          age: 27,
-          address: {
-            street: '10 Soap Ave.',
-            city: 'Commerce City',
-            state: 'CO'
-          },
+          email: 'Eddie@gmail.com',
           isActive: true,
           registered: new Date('11/02/2016 10:30:00'),
           hide: true
@@ -73,28 +53,22 @@ export class UsersComponent implements OnInit {
 
   }
 
-  addUser() {
-    this.user.isActive = true;
-    this.user.registered = new Date();
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
 
-    // this.users.push(this.user); will add it to the end
-    this.users.unshift(this.user); // adds it to the beginning
+  //   // this.users.push(this.user); will add it to the end
+  //   this.users.unshift(this.user); // adds it to the beginning
 
-    this.user = {
-      firstName: '',
-      lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        state: ''
-      }
-    }
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: ''
+  //   };
+  // }
+
+  onSubmit(e) {
     
-  }
-
-  toggleHide(user: User) {
-    user.hide = !user.hide;
   }
 
 }
