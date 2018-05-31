@@ -13,27 +13,34 @@ export class UsersComponent implements OnInit {
     firstName: '',
     lastName: '',
     email: ''
-  }
+  };
   users: User[];
-  showExtended: boolean = true;
-  loaded: boolean = false;
-  enableAdd: boolean = false;
-  showUserForm: boolean = false;
+  showExtended = true;
+  loaded = false;
+  enableAdd = false;
+  showUserForm = false;
   @ViewChild('userForm') form: any;
+  data: any;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
 
-    this.users = this.dataService.getUsers(); 
-    
-    this.loaded = true;
+    this.dataService.getData().subscribe(data => {
+      console.log(data)
+    });
+
+    this.dataService.getUsers().subscribe(users => {
+      this.users = users;
+      this.loaded = true;
+    });
+
 
   }
 
   onSubmit({value, valid}: {value: User, valid: boolean}) {
-    if(!valid) {
-      console.log('Form is not valid')
+    if (!valid) {
+      console.log('Form is not valid');
     } else {
       value.isActive = true;
       value.registered = new Date();
